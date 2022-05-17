@@ -1,0 +1,349 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
+/* 
+Font: Roboto
+font-family: 'Roboto', sans-serif;
+Farben: #0b0c17 / #ff3571 / #dddddd / #3C30FF / #FFF / #000
+*/
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+
+/* =============================
+            Navbar
+============================== */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1vh 7%;
+    border-bottom: 1px solid #dddddd;
+    box-shadow: 1px 10px 10px rgb(55, 54, 54);
+    background-color: white;
+    margin-bottom: 4vh;
+    overflow: hidden;
+}
+
+.navbar img {
+    width: 20px;
+}
+
+.navbar a {
+    display: block;
+    text-decoration: none;
+    color: #3C30FF;
+    font-size: 0.8rem;
+}
+
+.logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    width: 90px;
+}
+
+.icons {
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icons div {
+    margin-right: 1.7rem;
+}
+
+.icons div :hover,
+.logo:hover {
+    cursor: pointer;
+}
+
+.icons i,
+.icons svg {
+    font-size: 1.2rem;
+    color: #3C30FF;
+}
+
+
+/* =============================
+        Main
+============================== */
+
+.main-container {
+    padding: 4vh 1% 0 3%;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* Search-------------------------- */
+
+.search {
+    width: 32vw;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+}
+
+.search i {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    color: burlywood;
+}
+
+.search input {
+    width: 30vw;
+    padding: 9px;
+    border: none;
+    border: 1px solid burlywood;
+    border-radius: 10px;
+}
+
+
+/* Filter-------------------------- */
+
+.filter-container {
+    width: 20%;
+}
+
+.filter {
+    position: fixed;
+    text-align: center;
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+    box-shadow: 0px 0px 12px 4px #dddddd;
+    height: 250px;
+    width: 250px;
+}
+
+.filter h4 {
+    border-bottom: 1px solid #dddddd;
+    padding: 1vh;
+}
+
+.filter-form {
+    padding: 2vh;
+}
+
+.filter label {
+    display: block;
+    padding: 1vh;
+}
+
+.filter-form select {
+    width: 200px;
+    padding: 2px;
+}
+
+.filter-form input[type="number"] {
+    width: 80px;
+    padding: 0.5vh;
+}
+
+.filter-form input[type="button"] {
+    padding: 0.7vh 3vh;
+    margin-top: 2vh;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    background-color: #ff3571;
+}
+
+.filter-form input[type="button"]:hover {
+    background-color: #3C30FF;
+    cursor: pointer;
+}
+
+
+/* Card-------------------------- */
+
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 80%;
+}
+
+.card {
+    border: 1px solid #dddddd;
+    padding: 1rem;
+    position: relative;
+    text-align: center;
+    box-shadow: 0px 0px 12px 4px #dddddd;
+    width: 250px;
+    border: 1px solid burlywood;
+    border-radius: 10px;
+    margin: 5px;
+    background-color: #fff;
+}
+
+.card img {
+    padding: 5px;
+    width: 200px;
+    height: 30vh;
+}
+
+.card i {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    color: coral;
+}
+
+.card-body p {
+    height: 15vh;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1vh;
+}
+
+.card-footer span {
+    color: #3C30FF;
+    font-weight: bold;
+}
+
+.card-footer input {
+    background-color: gold;
+    border: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.card-footer input:hover {
+    background-color: #ff3571;
+}
+
+
+/* Login------------------------ */
+
+.login {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 8vh;
+}
+
+.login img {
+    width: 50%;
+    height: 70%;
+}
+
+.login .form {
+    border: #dddddd solid 1px;
+    border-radius: 20px;
+    padding: 3vh 3%;
+    color: #3C30FF;
+    background-color: #d4b4f3;
+    box-shadow: 0px 0px 12px 4px #dddddd;
+    position: relative;
+}
+
+.login .form h1 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 2vh;
+}
+
+.login form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.form label {
+    padding: 5px;
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.form input {
+    width: 20vw;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 0 5px 30px;
+    font-size: 1rem;
+    margin-bottom: 1vh;
+}
+
+.form input[name="submit"] {
+    margin: 2vh auto;
+    width: 20vw;
+    background-color: #3C30FF;
+    border: none;
+    color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.login i:nth-of-type(1) {
+    position: absolute;
+    top: 29%;
+    left: 13%;
+}
+
+.login i:nth-of-type(2) {
+    position: absolute;
+    top: 45%;
+    left: 13%;
+}
+
+.login i:nth-of-type(3) {
+    position: absolute;
+    top: 61%;
+    left: 13%;
+}
+
+.login i:nth-of-type(4) {
+    position: absolute;
+    top: 77%;
+    left: 13%;
+}
+
+#login-email {
+    top: 39%;
+    left: 13%;
+}
+
+#login-password {
+    top: 61%;
+    left: 13%;
+}
+
+.account-login {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1vh;
+}
+
+.account-login a {
+    text-decoration: none;
+    color: #3C30FF;
+}
+
+.account-login a:hover {
+    text-decoration: underline;
+}
