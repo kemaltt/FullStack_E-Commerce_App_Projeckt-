@@ -172,6 +172,27 @@ html {
 }
 
 
+/* page-btn--------------------- */
+
+.page_btn {
+    text-align: center;
+}
+
+.page_btn button {
+    margin: 5px;
+    padding: 5px 15px;
+    border: none;
+    background-color: #ff3571;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.page_btn button:active {
+    background-color: #3C30FF;
+}
+
+
 /* Card-------------------------- */
 
 .product-container {

@@ -491,7 +491,6 @@ const UserContextProvider = ({ children }) => {
 
   return (
     <UserContext.Provider value={{ products, isAuthenticated }}>
-      {" "}
       {children}
     </UserContext.Provider>
   );

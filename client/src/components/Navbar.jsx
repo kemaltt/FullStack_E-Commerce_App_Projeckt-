@@ -17,9 +17,9 @@ export default function Navbar() {
         />
       </div>{" "}
       {/* <div className="search">
-                    <input type="text" name="" id="" placeholder="Search " />
-                    <i class="fa fa-search"> </i>
-                  </div> */}{" "}
+                                <input type="text" name="" id="" placeholder="Search " />
+                                <i class="fa fa-search"> </i>
+                              </div> */}{" "}
       <div className="icons">
         <div
           onClick={() => {
@@ -45,7 +45,7 @@ export default function Navbar() {
           }}
           className="favs"
         >
-          <i class="fas fa-heart"> </i> <a href=""> Favorites </a>{" "}
+          <i class="fas fa-heart"> </i> <a href=""> Favorites </a>
         </div>{" "}
         <div
           onClick={() => {
@@ -53,7 +53,7 @@ export default function Navbar() {
           }}
           className="account"
         >
-          <i class="fas fa-user-alt"> </i> <a href=""> Account </a>{" "}
+          <i class="fas fa-user-alt"> </i> <a href=""> Account </a>
         </div>{" "}
       </div>{" "}
     </div>

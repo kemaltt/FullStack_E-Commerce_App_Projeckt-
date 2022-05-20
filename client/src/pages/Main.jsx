@@ -1,19 +1,55 @@
 import React from "react";
-
 import ProductCard from "../components/ProductCard";
-import { useContext } from "react";
+import { useContext, useEffect, useState, useRef } from "react";
 import { UserContext } from "../context/UserContext";
 import Navbar from "../components/Navbar";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const Main = () => {
+  const [page, setPage] = useState(1);
+  const [products1, setProducts1] = useState([]);
+  const inputRef = useRef({
+    keyword: "",
+    min_price: "",
+    max_price: "",
+    taxonomy_id: "",
+  });
+
+  const getProducts = () => {
+    const payload = {
+      keyword: inputRef.current.keyword,
+      min_price: inputRef.current.min_price,
+      max_price: inputRef.current.max_price,
+      taxonomy_id: inputRef.current.taxonomy_id,
+    };
+    axios
+      .post("http://localhost:8000/product", payload)
+      .then((res) => {
+        setProducts1(res.data.data);
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log("ERROR", err);
+      });
+  };
+
+  useEffect(() => {
+    getProducts();
+  }, [page]);
+
+  // const increasePage = () => {
+  //   setPage(page + 1);
+  // };
+  // const decreasePage = () => {
+  //   setPage(page - 1);
+  // };
+
   const navigate = useNavigate();
   const { products } = useContext(UserContext);
 
   return (
     <>
-      {/* <Navbar /> */}
-
       <div className="search">
         <input type="text" name="" id="" placeholder="Search " />
         <i class="fa fa-search"> </i>
@@ -21,19 +57,19 @@ const Main = () => {
       <div className="main-container">
         <div className="filter-container">
           <div className="filter">
-            <h4>Filters</h4>
+            <h4> Filters </h4>
             <div className="filter-form">
-              <label htmlFor="category">Category</label>
+              <label htmlFor="category"> Category </label>
               <select name="category" id="category">
-                <option value="volvo">Volvo</option>
-                <option value="saab">Saab</option>
-                <option value="mercedes">Mercedes</option>
-                <option value="audi">Audi</option>
+                <option value="volvo"> Volvo </option>
+                <option value="saab"> Saab </option>
+                <option value="mercedes"> Mercedes </option>
+                <option value="audi"> Audi </option>
               </select>
               <div>
-                <label htmlFor="price">Price</label>
+                <label htmlFor="price"> Price </label>
                 <input type="number" name="number" id="" placeholder="Min" />
-                <span>-</span>
+                <span> - </span>
                 <input type="number" name="number" id="" placeholder="Max" />
               </div>
               <input type="button" value="Search" />
@@ -45,6 +81,11 @@ const Main = () => {
             <ProductCard img={el.img} title={el.title} price={el.price} />
           ))}
         </div>
+      </div>
+      <div className="page_btn">
+        <button>ileri</button>
+
+        <button>geri</button>
       </div>
     </>
   );
